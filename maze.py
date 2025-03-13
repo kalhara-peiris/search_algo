@@ -1,13 +1,12 @@
 import random
 maze=[
-     ["1","7",13,0,0,0],
-     ["2","8",0,0,0,0],
-     ["3","9",0,0,0,0],
-     ["4","10",0,0,0,0],
-     ["5","12",0,0,0,0],
-     ["6","13",0,0,0,0],
+     ["01","07","13","19","25","31"],
+     ["02","08","14","20","26","32"],
+     ["03","09","15","21","27","33"],
+     ["04","10","16","22","28","34"],
+     ["05","11","17","23","29","35"],
+     ["06","12","18","24","30","36"],
      ]
-
 
 #making starting points(only from first 1 nodes)
 while True:
@@ -17,12 +16,12 @@ while True:
     continue
   else:
     break
-maze[row][col]="S"
+maze[row][col]="ST"
 
 #goal node
 row_goal=random.randint(0,5)
 col_goal=random.randint(4,5)
-maze[row_goal][col_goal]="G"
+maze[row_goal][col_goal]="GO"
 
 count=0
 #Barriers
@@ -31,13 +30,16 @@ while True:
     break
   row_barrier=random.randint(0,5)
   col_barrier=random.randint(0,5)
-  if maze[row_barrier][col_barrier]==0:
-    maze[row_barrier][col_barrier]="B"
+  if maze[row_barrier][col_barrier]!="BA":
+    maze[row_barrier][col_barrier]="BA"
     count+=1
   else:
     continue
 
+print()
 
 for i in range(6):
-  print(maze[i])
-
+  for j in range(6):
+    print(maze[i][j],end=" ")
+  print()  
+print()
