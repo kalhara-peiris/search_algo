@@ -43,3 +43,15 @@ for i in range(6):
     print(maze[i][j],end=" ")
   print()  
 print()
+
+#visiting list 
+
+visited_list=[]
+visited_nodes=[]
+print(row,col)
+visited_nodes.extend([row,col])
+visited_list.append(visited_nodes)
+visited_list.clear()
+print(visited_list)
+
+
